@@ -32,21 +32,14 @@ class SwipeVC: UIViewController {
     //button that brings to the next page
     @IBOutlet weak var nextPage: UIButton!
     
-    //see menu button
+    //see menu button & hyperlink
+    @IBOutlet weak var seeMenu: UIButton!
     @IBAction func menuLink(_ sender: AnyObject) {
         print(self.deck[self.cardIndex][8])
         if let url = NSURL(string: self.deck[self.cardIndex][8]) {
             UIApplication.shared.openURL(url as URL)
         }
     }
-//    @IBAction func linkClicked(_ sender: AnyObject) {
-//        print(self.deck[self.cardIndex][8])
-//        if let url = NSURL(string: self.deck[self.cardIndex][8]) {
-//            UIApplication.shared.openURL(url as URL)
-//        }
-//    }
-    @IBOutlet weak var seeMenu: UIButton!
-    
     
     var deck = DataManager.sharedData.deck
     var divisor: CGFloat! //variable for angle
@@ -67,7 +60,6 @@ class SwipeVC: UIViewController {
         cityLabel.alpha = 0
         priceLabel.alpha = 0
         seeMenu.alpha = 0
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -80,11 +72,12 @@ class SwipeVC: UIViewController {
         
         UIView.animate(withDuration: 0.5, animations: {
             self.card.alpha = 1 //have to refer self if using outside of the brackets
-            
         }) { (true) in
             self.showInfo()
         }
     }
+    
+    //populates the card with info
     func showInfo()
     {   print("did deck transfer:", deck)
         UIView.animate(withDuration: 0.1, animations: {
