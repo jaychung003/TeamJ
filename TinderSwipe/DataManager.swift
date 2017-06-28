@@ -27,6 +27,7 @@ class DataManager: NSObject {
     var URLtoPass = String()
     var URLtoPassNoSpace = ""
     var urlHERE = ""
+    var myCurrentLocation = CLLocationCoordinate2D()
     var eventType = ["Food","Breakfast","Brunch","Lunch","Coffee","Dinner","Dessert","Drinks"]
 
     var PriceAndTier = String()
@@ -120,11 +121,21 @@ class DataManager: NSObject {
     }
     
     //takes user input location and generates foursquare url
-    func makeMyURL()  {
+    func makeInputLocationURL()  {
         URLtoPass =  "https://api.foursquare.com/v2/search/recommendations?near=\(eventCity),\(eventState)&v=20160607&intent=\(venueType)&limit=15&client_id=\(client_id)&client_secret=\(client_secret)"
         URLtoPassNoSpace = URLtoPass.replacingOccurrences(of: " ", with: "_", options: .literal, range: nil)
         urlHERE = URLtoPassNoSpace
         print("This is makemyURL", urlHERE)
+    }
+    
+    func makeMyLocationURL()
+    {
+        URLtoPass = "https://api.foursquare.com/v2/search/recommendations?ll=\(myCurrentLocation.latitude),\(myCurrentLocation.longitude)&v=20160607&intent=\(venueType)&limit=15&client_id=\(client_id)&client_secret=\(client_secret)"
+
+        URLtoPassNoSpace = URLtoPass.replacingOccurrences(of: " ", with: "_", options: .literal, range: nil)
+        urlHERE = URLtoPassNoSpace
+        print("This is makemyURL", urlHERE)
+   
     }
     
     func resetCard()

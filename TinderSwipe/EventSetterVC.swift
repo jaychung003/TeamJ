@@ -87,6 +87,7 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if flag {
             currentLocation = locations.last?.coordinate
+            DataManager.sharedData.myCurrentLocation = currentLocation
             flag = false
         }
     }
@@ -175,10 +176,10 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
                         self.present(self.alertView, animated: true, completion: nil)
                     }
                     else {
-                        DataManager.sharedData.urlHERE = "https://api.foursquare.com/v2/search/recommendations?ll=\(self.currentLocation.latitude),\(self.currentLocation.longitude)&v=20160607&intent=\(DataManager.sharedData.venueType)&limit=15&client_id=\(client_id)&client_secret=\(client_secret)"
-                let url = DataManager.sharedData.urlHERE
-                DataManager.sharedData.request = NSMutableURLRequest(url: URL(string: url)!)
-                DataManager.sharedData.getJSONData()
+                        DataManager.sharedData.makeMyLocationURL()
+                        let url = DataManager.sharedData.urlHERE
+                        DataManager.sharedData.request = NSMutableURLRequest(url: URL(string: url)!)
+                        DataManager.sharedData.getJSONData()
 
 // while statement allows for time for fullJson to populate
                 
@@ -214,7 +215,7 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
             self.present(alertView, animated: true, completion: nil)
         }
         else {
-            DataManager.sharedData.makeMyURL()
+            DataManager.sharedData.makeInputLocationURL()
             let url = DataManager.sharedData.urlHERE
             DataManager.sharedData.request = NSMutableURLRequest(url: URL(string: url)!)
             DataManager.sharedData.getJSONData()
