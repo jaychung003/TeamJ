@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		43B81C6A1EF36387009972A1 /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B81C691EF36387009972A1 /* ThirdVC.swift */; };
-		A9FA9CA31F043C3200EC7A82 /* TEST TEST TEST.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA9CA21F043C3200EC7A82 /* TEST TEST TEST.swift */; };
 		CB67B61F1F02FE6000CC5917 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB67B61E1F02FE6000CC5917 /* DataManager.swift */; };
 		CB92D2DD1EF30186007DF6A7 /* SwipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB92D2DC1EF30186007DF6A7 /* SwipeVC.swift */; };
 		CB9D46A21EF32E1B00A9A0CB /* UIButtonX.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9D46981EF32E1B00A9A0CB /* UIButtonX.swift */; };
@@ -31,7 +30,6 @@
 
 /* Begin PBXFileReference section */
 		43B81C691EF36387009972A1 /* ThirdVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
-		A9FA9CA21F043C3200EC7A82 /* TEST TEST TEST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TEST TEST TEST.swift"; sourceTree = "<group>"; };
 		CB67B61E1F02FE6000CC5917 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		CB92D2DC1EF30186007DF6A7 /* SwipeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeVC.swift; sourceTree = "<group>"; };
 		CB9D46981EF32E1B00A9A0CB /* UIButtonX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonX.swift; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 		CBB445591EF2EDB2005F436A = {
 			isa = PBXGroup;
 			children = (
-				A9FA9CA21F043C3200EC7A82 /* TEST TEST TEST.swift */,
 				CBB445641EF2EDB2005F436A /* TinderSwipe */,
 				CBB445631EF2EDB2005F436A /* Products */,
 			);
@@ -184,7 +181,6 @@
 			files = (
 				CB9D46AB1EF32E1B00A9A0CB /* UIVisualEffectViewX.swift in Sources */,
 				CB67B61F1F02FE6000CC5917 /* DataManager.swift in Sources */,
-				A9FA9CA31F043C3200EC7A82 /* TEST TEST TEST.swift in Sources */,
 				CB9D46A21EF32E1B00A9A0CB /* UIButtonX.swift in Sources */,
 				CBBFF4391EFDC57A005C1EB0 /* EventSetterVC.swift in Sources */,
 				CB9D46A31EF32E1B00A9A0CB /* UIImageViewX.swift in Sources */,
