@@ -21,7 +21,6 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
     @IBOutlet weak var cityField: UITextField!
     @IBOutlet weak var stateField: UITextField!
     @IBOutlet weak var eventNameField: UITextField!
-    @IBOutlet weak var myLocation: UIButton!
     
 //establishes variables to store location data (longitude and latitude)
     
@@ -151,55 +150,11 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
     }
     
 //One click of this button gets current locations, sets urlHERE, makes deck, and transitions to next ViewController
-    
-    @IBAction func clickMyLocation(_ sender: Any)
-{
-        getCurrentLocation()
-        pickerView.isHidden = true
-        datePicker.isHidden = true
-        DataManager.sharedData.eventName = eventNameField.text!
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1)
-        {
-
-// if statement allows time for currentLocation to no longer be nil. We could probably approach this differently
-
-        if self.currentLocation == nil
-        {
-        print("clickmylocation is nil")
-        }
-        else
-            {
-            if (DataManager.sharedData.eventName.isEmpty || DataManager.sharedData.eventDateAndTime.isEmpty || DataManager.sharedData.venueType.isEmpty) == true
-                    {   self.alertView = UIAlertController(title: "Incomplete Information", message: "Please make sure the event's NAME, DATE, TIME, and VENUE TYPE, are completed.", preferredStyle: .alert)
-                        self.action = UIAlertAction(title: "Let's Add Them!", style: .default, handler: { (alert) in })
-                        self.alertView.addAction(self.action)
-                        self.present(self.alertView, animated: true, completion: nil)
-                    }
-                    else {
-                        DataManager.sharedData.makeMyLocationURL()
-                        let url = DataManager.sharedData.urlHERE
-                        DataManager.sharedData.request = NSMutableURLRequest(url: URL(string: url)!)
-                        DataManager.sharedData.getJSONData()
-
-// while statement allows for time for fullJson to populate
-                
-                while DataManager.sharedData.fullJson == nil {
-                    print("JSON IS NIL")
-                }
-                DataManager.sharedData.getResultJson(indexRestaurant: DataManager.sharedData.indexRestaurant)
-                DataManager.sharedData.createDeck()
-
-//This is the transition to the next VC
-
-                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SwipeVCID")
-                self.present(nextViewController, animated:true, completion:nil)
-                        }
-            
-            }
-            
-        }
-}
+    @IBAction func fillWithMyLocation(_ sender: UIButton) {
+        cityField.text! = "My Location"
+        stateField.text! = "My Location"
+    }
+ 
     
 //One click of this button takes user input, sets urlHERE, makes deck, and transitions to next ViewController
     @IBAction func getManualURL(_ sender: UIButton) {
@@ -208,12 +163,41 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
         DataManager.sharedData.eventState = stateField.text!
         pickerView.isHidden = true
         datePicker.isHidden = true
+        
         if (DataManager.sharedData.eventState.isEmpty || DataManager.sharedData.eventCity.isEmpty || DataManager.sharedData.eventName.isEmpty || DataManager.sharedData.eventDateAndTime.isEmpty || DataManager.sharedData.venueType.isEmpty) == true
         {   alertView = UIAlertController(title: "Incomplete Information", message: "Please make sure the event's NAME, DATE, CITY, STATE, TIME, and VENUE TYPE, are completed.", preferredStyle: .alert)
             action = UIAlertAction(title: "Let's Add Them!", style: .default, handler: { (alert) in })
             alertView.addAction(action)
             self.present(alertView, animated: true, completion: nil)
         }
+        
+        if ((cityField.text! == "My Location") && (stateField.text! == "My Location"))
+        {   getCurrentLocation()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1){
+            DataManager.sharedData.makeMyLocationURL()
+            let url = DataManager.sharedData.urlHERE
+            print(url)
+            DataManager.sharedData.request = NSMutableURLRequest(url: URL(string: url)!)
+            DataManager.sharedData.getJSONData()
+            
+            // while statement allows for time for fullJson to populate
+            
+            while DataManager.sharedData.fullJson == nil {
+                print("JSON IS LLL")
+            }
+            print("We left the while loop")
+            print(self.currentLocation)
+            DataManager.sharedData.getResultJson(indexRestaurant: DataManager.sharedData.indexRestaurant)
+            print("Hello World")
+            DataManager.sharedData.createDeck()
+            print("We created a deck", DataManager.sharedData.deck)
+            //This is the transition to the next VC
+            
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SwipeVCID")
+            self.present(nextViewController, animated:true, completion:nil)
+            }}
+
         else {
             DataManager.sharedData.makeInputLocationURL()
             let url = DataManager.sharedData.urlHERE
@@ -233,9 +217,8 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SwipeVCID")
             self.present(nextViewController, animated:true, completion:nil)
         }
+}
 
-    }
-    
 }
 
 extension UIViewController

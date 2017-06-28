@@ -48,7 +48,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BXH-Dv-leE">
-                                <rect key="frame" x="72" y="85" width="97" height="30"/>
+                                <rect key="frame" x="131" y="85" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -62,7 +62,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State Abbrv." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GKr-T3-CPq">
-                                <rect key="frame" x="205" y="85" width="104" height="30"/>
+                                <rect key="frame" x="247" y="85" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -76,21 +76,23 @@
                                     <outlet property="delegate" destination="e0O-QO-PQr" id="3ZS-1w-A1z"/>
                                 </connections>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzB-er-qoT">
-                                <rect key="frame" x="201" y="434" width="113" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVa-14-ONe">
+                                <rect key="frame" x="25" y="89" width="89" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" identifier="getManualURL"/>
-                                <state key="normal" title="Search Manually"/>
-                                <connections>
-                                    <action selector="getManualURL:" destination="e0O-QO-PQr" eventType="touchUpInside" id="BNq-sc-ZHJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnK-Sy-Yfw">
-                                <rect key="frame" x="51" y="434" width="118" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <state key="normal" title="Use My Location"/>
                                 <connections>
-                                    <action selector="clickMyLocation:" destination="e0O-QO-PQr" eventType="touchUpInside" id="DNs-a7-OxW"/>
+                                    <action selector="fillWithMyLocation:" destination="e0O-QO-PQr" eventType="touchUpInside" id="X01-Zp-6qZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzB-er-qoT">
+                                <rect key="frame" x="141" y="411" width="77" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="getManualURL"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="OK!"/>
+                                <connections>
+                                    <action selector="getManualURL:" destination="e0O-QO-PQr" eventType="touchUpInside" id="BNq-sc-ZHJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -102,7 +104,6 @@
                         <outlet property="datePicker" destination="OVC-LC-Wzs" id="YNl-1l-Axx"/>
                         <outlet property="eventNameField" destination="Tt8-Ce-xGw" id="Pm1-bt-MgZ"/>
                         <outlet property="label" destination="APg-SE-iiE" id="tv1-xb-GQJ"/>
-                        <outlet property="myLocation" destination="JnK-Sy-Yfw" id="rSe-hW-1FE"/>
                         <outlet property="pickerView" destination="Dh9-h0-0l9" id="XU1-BN-Mv5"/>
                         <outlet property="stateField" destination="GKr-T3-CPq" id="QQy-Kb-7Xd"/>
                     </connections>
