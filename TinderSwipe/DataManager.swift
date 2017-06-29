@@ -28,7 +28,7 @@ class DataManager: NSObject {
     var URLtoPassNoSpace = ""
     var urlHERE = ""
     var myCurrentLocation = CLLocationCoordinate2D()
-    var eventType = ["Food","Breakfast","Brunch","Lunch","Coffee","Dinner","Dessert","Drinks"]
+    var eventType = ["Drinks","Food","Breakfast","Brunch","Lunch","Coffee","Dinner","Dessert"]
 
     var PriceAndTier = String()
     var llURL = ""
@@ -40,7 +40,7 @@ class DataManager: NSObject {
     // variables for full JSON file
     var fullJson: AnyObject?
     var resultJson: AnyObject?
-    var indexRestaurant: Int = 0
+    var indexRestaurant = 0
     var specificRestaurant: NSDictionary?
     
     // variables for each piece of information
@@ -55,6 +55,8 @@ class DataManager: NSObject {
     var JSONHasMenu = ""
     var JSONMenuURL = ""
     var JSONTier: Int!
+    var userPriceSelection = [2,3]
+    var cardTierValue = 0
     
     // variables for data structures, card and deck
     var card = [String]() // an array of strings
@@ -71,6 +73,7 @@ class DataManager: NSObject {
             {
                 let myJson = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
                 self.fullJson = myJson
+                print(self.fullJson)
             }
             catch
             {
@@ -99,9 +102,14 @@ class DataManager: NSObject {
     //creates Deck
     func createDeck() -> [[String]]
     {
-        for indexRestaurant in 0...14
+        var count = 0
+        while count < 15
         {
             getResultJson(indexRestaurant: indexRestaurant)
+            getPrice()
+            print("CardTierValue",cardTierValue)
+            if userPriceSelection.contains(cardTierValue)
+            {
             setName()
             setLocationType()
             setLocationAddress()
@@ -112,17 +120,19 @@ class DataManager: NSObject {
             setMenuID()
             setHasMenu()
             deck.append(card)
-            
+            count = count + 1
             // reset card and imageURL
             resetCard()
             resetImageURL()
+            }
+            indexRestaurant = indexRestaurant + 1
         }
         return deck
     }
     
     //takes user input location and generates foursquare url
     func makeInputLocationURL()  {
-        URLtoPass =  "https://api.foursquare.com/v2/search/recommendations?near=\(eventCity),\(eventState)&v=20160607&intent=\(venueType)&limit=15&client_id=\(client_id)&client_secret=\(client_secret)"
+        URLtoPass =  "https://api.foursquare.com/v2/search/recommendations?near=\(eventCity),\(eventState)&v=20160607&intent=\(venueType)&limit=50&client_id=\(client_id)&client_secret=\(client_secret)"
         URLtoPassNoSpace = URLtoPass.replacingOccurrences(of: " ", with: "_", options: .literal, range: nil)
         urlHERE = URLtoPassNoSpace
         print("This is makemyURL", urlHERE)
@@ -130,7 +140,7 @@ class DataManager: NSObject {
     
     func makeMyLocationURL()
     {
-        urlHERE = "https://api.foursquare.com/v2/search/recommendations?ll=\(myCurrentLocation.latitude),\(myCurrentLocation.longitude)&v=20160607&intent=\(venueType)&limit=15&client_id=\(client_id)&client_secret=\(client_secret)"
+        urlHERE = "https://api.foursquare.com/v2/search/recommendations?ll=\(myCurrentLocation.latitude),\(myCurrentLocation.longitude)&v=20160607&intent=\(venueType)&limit=50&client_id=\(client_id)&client_secret=\(client_secret)"
         print("This is makemyURL", urlHERE)
    
     }
@@ -265,27 +275,29 @@ class DataManager: NSObject {
             if let JSONPriceGeneral = JSONVenue["price"] as? NSDictionary
             {
                 JSONTier = JSONPriceGeneral["tier"] as? Int
+                cardTierValue = JSONTier
+                print("JSONTIER is: ", JSONTier)
             }
         }
-        if JSONPrice == nil
+        if JSONPrice == nil || JSONTier == nil
         {
             JSONPrice = "N/A"
+            //Let's say that any venue without a tier is a 1
+            JSONTier = 1
         }
-        if JSONTier == nil
-        {
-            JSONTier = 0000000000
-        }
-        for numbers in 1...JSONTier
+        for numbers in 1...cardTierValue
         {
             PriceAndTier = PriceAndTier + "$"
         }
+        print("Price and Tier to be Returned", PriceAndTier)
         return (PriceAndTier)
     }
     
     func setPrice()
     {
-        card.append(getPrice())
         PriceAndTier = ""
+        JSONTier = 1
+        card.append(getPrice())
         //print(card)
         //print(card[5])
     }

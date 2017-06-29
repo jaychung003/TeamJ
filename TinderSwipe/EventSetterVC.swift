@@ -72,8 +72,8 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
         label.clipsToBounds = true
         okButton.isHidden = true
         okButton.layer.cornerRadius = 7
-        label.textColor = UIColor.black
-        dateLabel.textColor = UIColor.black
+        label.textColor = UIColor.gray
+        dateLabel.textColor = UIColor.gray
         cityField.textColor = UIColor.black
         stateField.textColor = UIColor.black
         eventNameField.textColor = UIColor.black
@@ -155,6 +155,7 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
     func tap(gestureRecognizer: UITapGestureRecognizer) {
         self.dismissKeyboard()
         self.hideKeyboard()
+        label.textColor = UIColor.black
         pickerView.isHidden = false
         datePicker.isHidden = true
         cityField.resignFirstResponder()
@@ -167,6 +168,7 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
     func tap2(gestureRecognizer: UITapGestureRecognizer) {
         self.dismissKeyboard()
         self.hideKeyboard()
+        dateLabel.textColor = UIColor.black
         datePicker.isHidden = false
         pickerView.isHidden = true
         cityField.resignFirstResponder()
