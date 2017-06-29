@@ -15,12 +15,13 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var hideButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var cityField: UITextField!
     @IBOutlet weak var stateField: UITextField!
     @IBOutlet weak var eventNameField: UITextField!
+    @IBOutlet weak var okButton: UIButton!
+    
     
 //establishes variables to store location data (longitude and latitude)
     
@@ -65,6 +66,17 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
         label.isUserInteractionEnabled = true
         dateLabel.isUserInteractionEnabled = true
         datePicker.backgroundColor = hexStringToUIColor(hex: "#46B1AA")
+        dateLabel.layer.cornerRadius = 5
+        dateLabel.clipsToBounds = true
+        label.layer.cornerRadius = 5
+        label.clipsToBounds = true
+        okButton.isHidden = true
+        okButton.layer.cornerRadius = 7
+        label.textColor = UIColor.black
+        dateLabel.textColor = UIColor.black
+        cityField.textColor = UIColor.black
+        stateField.textColor = UIColor.black
+        eventNameField.textColor = UIColor.black
     }
     
     func hexStringToUIColor (hex:String) -> UIColor {
@@ -102,6 +114,7 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
         } else {
             showLocationAlert()
         }
+        areFieldsFilled()
     }
     
 //sets current location to the last known location coordinate stored
@@ -112,6 +125,7 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
             DataManager.sharedData.myCurrentLocation = currentLocation
             flag = false
         }
+        areFieldsFilled()
     }
     
 //shows location request alert. Can customize message here.
@@ -120,6 +134,7 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
         let alert = UIAlertController(title: "Location Disabled", message: "Please enable location services", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
+        areFieldsFilled()
     }
     
 //sets up date selection scroll. Provides format and flexibility in variable storage
@@ -143,6 +158,8 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
         pickerView.isHidden = false
         datePicker.isHidden = true
         cityField.resignFirstResponder()
+        
+        areFieldsFilled()
     }
 
 //When the date label is selected, show date scroll and hide type scroll
@@ -153,6 +170,8 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
         datePicker.isHidden = false
         pickerView.isHidden = true
         cityField.resignFirstResponder()
+        self.areFieldsFilled()
+        
     }
     
 //Various info to set up pickerView scroll
@@ -174,13 +193,27 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
     
 //One click of this button gets current locations, sets urlHERE, makes deck, and transitions to next ViewController
     @IBAction func fillWithMyLocation(_ sender: UIButton) {
-        cityField.text! = "My Location"
-        stateField.text! = "My Location"
+        datePicker.isHidden = true
+        pickerView.isHidden = true
+        cityField.text! = "Here"
+        stateField.text! = "Here"
+        areFieldsFilled()
     }
  
     
+func areFieldsFilled()
+{
+    if (DataManager.sharedData.eventState.isEmpty && DataManager.sharedData.eventCity.isEmpty && DataManager.sharedData.eventName.isEmpty && DataManager.sharedData.eventDateAndTime.isEmpty && DataManager.sharedData.venueType.isEmpty) == false
+    {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.25){self.okButton.isHidden = false}
+    }
+    
+}
+    
 //One click of this button takes user input, sets urlHERE, makes deck, and transitions to next ViewController
     @IBAction func getManualURL(_ sender: UIButton) {
+        datePicker.isHidden = true
+        pickerView.isHidden = true
         DataManager.sharedData.eventName = eventNameField.text!
         DataManager.sharedData.eventCity = cityField.text!
         DataManager.sharedData.eventState = stateField.text!
@@ -194,8 +227,9 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
             self.present(alertView, animated: true, completion: nil)
         }
         
-        if ((cityField.text! == "My Location") && (stateField.text! == "My Location"))
-        {   getCurrentLocation()
+        if ((cityField.text! == "Here") && (stateField.text! == "Here"))
+        {
+            getCurrentLocation()
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1){
             DataManager.sharedData.makeMyLocationURL()
             let url = DataManager.sharedData.urlHERE
@@ -222,6 +256,7 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
             }}
 
         else {
+            okButton.isHidden = false
             DataManager.sharedData.makeInputLocationURL()
             let url = DataManager.sharedData.urlHERE
             DataManager.sharedData.request = NSMutableURLRequest(url: URL(string: url)!)

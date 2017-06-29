@@ -84,8 +84,8 @@
 			children = (
 				CBB445651EF2EDB2005F436A /* AppDelegate.swift */,
 				CBB445691EF2EDB2005F436A /* Main.storyboard */,
-				CBB4456C1EF2EDB2005F436A /* Assets.xcassets */,
 				CBB4456E1EF2EDB2005F436A /* LaunchScreen.storyboard */,
+				CBB4456C1EF2EDB2005F436A /* Assets.xcassets */,
 				CBB445711EF2EDB2005F436A /* Info.plist */,
 				CBBFF4381EFDC57A005C1EB0 /* EventSetterVC.swift */,
 				CB92D2DC1EF30186007DF6A7 /* SwipeVC.swift */,
