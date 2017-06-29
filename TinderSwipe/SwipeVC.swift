@@ -50,9 +50,8 @@ class SwipeVC: UIViewController {
         super.viewDidLoad()
         divisor = (view.frame.width / 2) / 0.61 //degree tilted
         hideButtons()
-        
-        nextPage.alpha = 0
         //for a few second delay of showing card's info
+        nextPage.alpha = 0
         card.alpha = 0
         nameLabel.alpha = 0
         typeLabel.alpha = 0
@@ -61,8 +60,21 @@ class SwipeVC: UIViewController {
         cityLabel.alpha = 0
         priceLabel.alpha = 0
         seeMenu.alpha = 0
-        
+        fetchEventName()
     }
+    
+    func fetchEventName() {
+        Database.database().reference().child("myGroups").observe(.childAdded, with: { (DataSnapshot) in
+            
+            if let dictionary = DataSnapshot.value as? [String: AnyObject] {
+                let groupInstance = Group()
+                groupInstance.groupName = dictionary["eventName"] as! String
+                print(groupInstance.groupName)
+            }
+        }
+            , withCancel: nil)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

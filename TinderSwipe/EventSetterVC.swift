@@ -35,7 +35,7 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
     var action = UIAlertAction()
     var alertView = UIAlertController()
 
-//IBAction called when "Create Event" clicked; sets location based on urlHERE, gets the JSONData file, and createsDeck from it
+//IBAction sets location based on urlHERE, gets the JSONData file, and createsDeck from it
     
     @IBAction func setLocation(_ sender: UIButton) {
         let url = DataManager.sharedData.urlHERE
@@ -45,26 +45,6 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
         }
         DataManager.sharedData.getResultJson(indexRestaurant: DataManager.sharedData.indexRestaurant)
         DataManager.sharedData.createDeck()
-        //storing event name to database
-//        let ref = Database.database().reference()
-//        let eventNameReference = ref.child("eventName")
-//        let values = ["eventName": eventNameField.text]
-//        eventNameReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
-//            if let err = err {
-//                print(err)
-//                return
-//            }
-//    })
-        
-//        uploadGroupName()
-//    }
-//    func uploadGroupName() {
-//        var databaseRef: DatabaseReference!
-//        databaseRef = Database.database().reference() // sets up reference to the Firebase database
-//        var groupInfo: [String: Any]
-//        groupInfo = ["eventName": "test event"]
-//        databaseRef.child("myGroups").childByAutoId().setValue(groupInfo)
-//        print("groupInfo:", groupInfo)
     }
     
     
