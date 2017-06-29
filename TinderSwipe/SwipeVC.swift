@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SwipeVC: UIViewController {
     
@@ -60,6 +61,7 @@ class SwipeVC: UIViewController {
         cityLabel.alpha = 0
         priceLabel.alpha = 0
         seeMenu.alpha = 0
+        
     }
     
     override func didReceiveMemoryWarning() {
