@@ -103,9 +103,7 @@ class SwipeVC: UIViewController {
     })
     }
     
-    @IBAction func loadNew(_ sender: UIButton) {
-        loadNew()
-    }
+
     func loadNew() {
         if self.cardIndex < (deck.count-1) {
             resetCard()
@@ -183,9 +181,6 @@ class SwipeVC: UIViewController {
         }
     }
 
-    @IBAction func reset(_ sender: UIButton) {
-        resetCard()
-    }
     func resetCard() {
             UIView.animate(withDuration: 0.2, animations: { //come back to center
                 self.card.center = self.view.center
