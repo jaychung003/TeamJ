@@ -43,6 +43,9 @@ class DataManager: NSObject {
     var indexRestaurant = 0
     var specificRestaurant: NSDictionary?
     
+    //price array variable
+    var priceArray:[Int] = []
+    
     // variables for each piece of information
     var JSONname: String!
     var JSONLocationType: String!
@@ -55,7 +58,6 @@ class DataManager: NSObject {
     var JSONHasMenu = ""
     var JSONMenuURL = ""
     var JSONTier: Int!
-    var userPriceSelection = [2,3]
     var cardTierValue = 0
     
     // variables for data structures, card and deck
@@ -80,6 +82,22 @@ class DataManager: NSObject {
             }
         }
         task.resume()
+    }
+    
+    func addRemoveValue(dollarSignValue: Int)
+    {
+        if (priceArray.contains(dollarSignValue))
+        {priceArray = priceArray.filter
+            {
+                $0 != dollarSignValue
+
+            }
+            print(priceArray)
+        }
+        else{
+            priceArray.append(dollarSignValue)
+            print(priceArray)
+        }
     }
     
     // gets the top level of the JSON file that is the same for all of the restaurants (before specific). Leaves us with a Specific5 value
@@ -108,7 +126,7 @@ class DataManager: NSObject {
             getResultJson(indexRestaurant: indexRestaurant)
             getPrice()
             print("CardTierValue",cardTierValue)
-            if userPriceSelection.contains(cardTierValue)
+            if priceArray.contains(cardTierValue)
             {
             setName()
             setLocationType()

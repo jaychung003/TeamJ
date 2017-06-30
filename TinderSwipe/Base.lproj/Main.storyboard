@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Type of Dining" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APg-SE-iiE">
-                                <rect key="frame" x="82" y="281" width="209" height="30"/>
+                                <rect key="frame" x="82" y="212" width="209" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -31,7 +31,7 @@
                                 <color key="highlightedColor" red="0.83448477030000001" green="0.83448477030000001" blue="0.83448477030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a Time and Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyV-L8-94l">
-                                <rect key="frame" x="82" y="227" width="209" height="30"/>
+                                <rect key="frame" x="83" y="250" width="209" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.83448477030000001" green="0.83448477030000001" blue="0.83448477030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -45,30 +45,30 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BXH-Dv-leE">
-                                <rect key="frame" x="46" y="170" width="137" height="30"/>
+                                <rect key="frame" x="16" y="212" width="137" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.83448477030000001" green="0.83448477030000001" blue="0.83448477030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.83448477030000001" green="0.83448477030000001" blue="0.83448477030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="yes" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Tt8-Ce-xGw">
-                                <rect key="frame" x="37" y="115" width="301" height="30"/>
+                                <rect key="frame" x="37" y="260" width="301" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.83448477030000001" green="0.83448477030000001" blue="0.83448477030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="yes" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GKr-T3-CPq">
-                                <rect key="frame" x="190" y="170" width="62" height="30"/>
+                                <rect key="frame" x="222" y="212" width="137" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.83448477030000001" green="0.83448477030000001" blue="0.83448477030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.83448477030000001" green="0.83448477030000001" blue="0.83448477030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="yes" spellCheckingType="no" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="yes" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <pickerView hidden="YES" contentMode="center" semanticContentAttribute="spatial" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dh9-h0-0l9">
-                                <rect key="frame" x="0.0" y="327" width="375" height="142"/>
+                                <rect key="frame" x="-1" y="368" width="375" height="190"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.27406751070000002" green="0.69450072880000002" blue="0.6664475393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.76470588240000004" green="0.23529411759999999" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -77,25 +77,8 @@
                                     <outlet property="delegate" destination="e0O-QO-PQr" id="3ZS-1w-A1z"/>
                                 </connections>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzB-er-qoT">
-                                <rect key="frame" x="73" y="486" width="228" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <accessibility key="accessibilityConfiguration" hint="Select When Done" identifier="getManualURL">
-                                    <accessibilityTraits key="traits" button="YES" adjustable="YES"/>
-                                    <bool key="isElement" value="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="tintColor" red="0.74901960784313726" green="0.85882352941176465" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Create Event">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="getManualURL:" destination="e0O-QO-PQr" eventType="touchUpInside" id="BNq-sc-ZHJ"/>
-                                </connections>
-                            </button>
                             <datePicker hidden="YES" contentMode="scaleToFill" semanticContentAttribute="playback" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="OVC-LC-Wzs">
-                                <rect key="frame" x="0.0" y="327" width="375" height="142"/>
+                                <rect key="frame" x="-1" y="368" width="375" height="190"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.27450980392156865" green="0.69411764705882351" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.27406751070000002" green="0.69450072880000002" blue="0.6664475393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -107,10 +90,10 @@
                                 </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVa-14-ONe">
-                                <rect key="frame" x="284" y="164" width="43" height="41"/>
+                                <rect key="frame" x="158" y="278" width="56" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="crosshair-256" backgroundImage="Screen Shot 2017-06-29 at 9.53.36 AM">
+                                <state key="normal" title="Use Current Location: " image="crosshair-256" backgroundImage="Screen Shot 2017-06-29 at 9.53.36 AM">
                                     <color key="titleColor" red="0.83448477030000001" green="0.83448477030000001" blue="0.83448477030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -118,36 +101,109 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBX-qE-MLT">
-                                <rect key="frame" x="266" y="174" width="16" height="21"/>
+                                <rect key="frame" x="179" y="255" width="16" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KAW-7W-hv3">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="barTintColor" red="0.63980915888695644" green="0.83448477030000001" blue="0.83448477030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="32"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Make A New Event" id="FSe-Ak-TBM"/>
-                                </items>
-                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggx-Ef-29k">
+                                <rect key="frame" x="25" y="155" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="$"/>
+                                <connections>
+                                    <action selector="amendSearchOne:" destination="e0O-QO-PQr" eventType="touchUpInside" id="fU5-Ay-vxk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0T-te-eoO">
+                                <rect key="frame" x="82" y="155" width="52" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="$$"/>
+                                <connections>
+                                    <action selector="amendSearchTwo:" destination="e0O-QO-PQr" eventType="touchUpInside" id="eD9-aL-rCT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3N-SH-n8e">
+                                <rect key="frame" x="154" y="155" width="74" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="$$$"/>
+                                <connections>
+                                    <action selector="amendSearchThree:" destination="e0O-QO-PQr" eventType="touchUpInside" id="Qof-aN-dmK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWr-hV-NEV">
+                                <rect key="frame" x="247" y="155" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="$$$$"/>
+                                <connections>
+                                    <action selector="amendSearchFour:" destination="e0O-QO-PQr" eventType="touchUpInside" id="HqL-iK-ePr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9b-LS-NFb">
+                                <rect key="frame" x="291" y="28" width="68" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next Step"/>
+                                <connections>
+                                    <action selector="incrementStepValue:" destination="e0O-QO-PQr" eventType="touchUpInside" id="WZB-8b-Nvg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What Step We Are On" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZF6-xu-5D9">
+                                <rect key="frame" x="0.0" y="22" width="343" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="and" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2YI-CQ-fKA">
+                                <rect key="frame" x="172" y="217" width="29" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzB-er-qoT">
+                                <rect key="frame" x="63" y="233" width="248" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" hint="Select When Done" identifier="getManualURL">
+                                    <accessibilityTraits key="traits" button="YES" adjustable="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="tintColor" red="0.74901960784313726" green="0.85882352941176465" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Start Swiping! ">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="getManualURL:" destination="e0O-QO-PQr" eventType="touchUpInside" id="BNq-sc-ZHJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12549019607843137" green="0.63921568627450975" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.47843137254901957" green="0.36470588235294116" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="SearchFour" destination="HWr-hV-NEV" id="BeF-ZF-UDJ"/>
+                        <outlet property="SearchOne" destination="Ggx-Ef-29k" id="yUP-h9-nDC"/>
+                        <outlet property="SearchThree" destination="q3N-SH-n8e" id="VxR-D1-3Z0"/>
+                        <outlet property="SearchTwo" destination="g0T-te-eoO" id="s65-cD-mnJ"/>
+                        <outlet property="andLabel" destination="2YI-CQ-fKA" id="eUf-a6-aUn"/>
                         <outlet property="cityField" destination="BXH-Dv-leE" id="B1A-hS-YLk"/>
                         <outlet property="dateLabel" destination="fyV-L8-94l" id="S1N-E6-hFV"/>
                         <outlet property="datePicker" destination="OVC-LC-Wzs" id="YNl-1l-Axx"/>
+                        <outlet property="diningLabel" destination="APg-SE-iiE" id="hrl-zA-Yxb"/>
                         <outlet property="eventNameField" destination="Tt8-Ce-xGw" id="Pm1-bt-MgZ"/>
-                        <outlet property="label" destination="APg-SE-iiE" id="tv1-xb-GQJ"/>
+                        <outlet property="myLocationIconButton" destination="jVa-14-ONe" id="2TE-fZ-efW"/>
+                        <outlet property="nextStep" destination="g9b-LS-NFb" id="sqC-GC-dVp"/>
                         <outlet property="okButton" destination="wzB-er-qoT" id="bcl-IX-Fno"/>
+                        <outlet property="orLabel" destination="nBX-qE-MLT" id="lwp-o1-4b3"/>
                         <outlet property="pickerView" destination="Dh9-h0-0l9" id="XU1-BN-Mv5"/>
                         <outlet property="stateField" destination="GKr-T3-CPq" id="QQy-Kb-7Xd"/>
+                        <outlet property="stepLabel" destination="ZF6-xu-5D9" id="cs2-p0-f0X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vqG-OZ-eSD" userLabel="First Responder" sceneMemberID="firstResponder"/>

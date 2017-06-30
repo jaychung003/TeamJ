@@ -13,7 +13,7 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
 
 //IBOutlets to collect user input
     
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var diningLabel: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var dateLabel: UILabel!
@@ -21,7 +21,24 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
     @IBOutlet weak var stateField: UITextField!
     @IBOutlet weak var eventNameField: UITextField!
     @IBOutlet weak var okButton: UIButton!
+    @IBOutlet weak var nextStep: UIButton!
+    @IBOutlet weak var orLabel: UILabel!
+    @IBOutlet weak var myLocationIconButton: UIButton!
+    @IBOutlet weak var stepLabel: UILabel!
+    @IBOutlet weak var andLabel: UILabel!
     
+   
+// IBOutlets to collect price range data
+    
+    @IBOutlet weak var SearchOne: UIButton!
+    @IBOutlet weak var SearchTwo: UIButton!
+    @IBOutlet weak var SearchThree: UIButton!
+    @IBOutlet weak var SearchFour: UIButton!
+    
+// keep track of what step we're on
+    var stepValue = 0
+    
+   
     
 //establishes variables to store location data (longitude and latitude)
     
@@ -33,6 +50,121 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
     
     var action = UIAlertAction()
     var alertView = UIAlertController()
+    
+//IBAction to increment stepValue
+
+    @IBAction func incrementStepValue(_ sender: UIButton) {
+        self.hideKeyboard()
+        self.dismissKeyboard()
+        if stepValue == 0
+        {
+            eventNameField.isHidden = true
+            cityField.isHidden = false
+            stateField.isHidden = false
+            orLabel.isHidden = false
+            myLocationIconButton.isHidden = false
+            dateLabel.isHidden = true
+            diningLabel.isHidden = true
+            pickerView.isHidden = true
+            datePicker.isHidden = true
+            SearchOne.isHidden = true
+            SearchTwo.isHidden = true
+            SearchThree.isHidden = true
+            SearchFour.isHidden = true
+            okButton.isHidden = true
+            andLabel.isHidden = false
+            stepLabel.text! = "Search by City and State or Current Location"
+
+        }
+        if stepValue == 1
+        {
+            self.hideKeyboard()
+            self.dismissKeyboard()
+            eventNameField.isHidden = true
+            cityField.isHidden = true
+            stateField.isHidden = true
+            orLabel.isHidden = true
+            myLocationIconButton.isHidden = true
+            dateLabel.isHidden = false
+            diningLabel.isHidden = true
+            pickerView.isHidden = true
+            datePicker.isHidden = false
+            SearchOne.isHidden = true
+            SearchTwo.isHidden = true
+            SearchThree.isHidden = true
+            SearchFour.isHidden = true
+            okButton.isHidden = true
+            andLabel.isHidden = true
+            stepLabel.text! = "Select a Time and Date for Your Event"
+
+        }
+        if stepValue == 2
+        {
+            self.hideKeyboard()
+            self.dismissKeyboard()
+            eventNameField.isHidden = true
+            cityField.isHidden = true
+            stateField.isHidden = true
+            orLabel.isHidden = true
+            myLocationIconButton.isHidden = true
+            dateLabel.isHidden = true
+            diningLabel.isHidden = false
+            pickerView.isHidden = false
+            datePicker.isHidden = true
+            SearchOne.isHidden = true
+            SearchTwo.isHidden = true
+            SearchThree.isHidden = true
+            SearchFour.isHidden = true
+            okButton.isHidden = true
+            andLabel.isHidden = true
+            stepLabel.text! = "Select a Type of Dining for Your Event"
+
+        }
+        if stepValue == 3
+        {
+            self.hideKeyboard()
+            self.dismissKeyboard()
+            eventNameField.isHidden = true
+            cityField.isHidden = true
+            stateField.isHidden = true
+            orLabel.isHidden = true
+            myLocationIconButton.isHidden = true
+            dateLabel.isHidden = true
+            diningLabel.isHidden = true
+            pickerView.isHidden = true
+            datePicker.isHidden = true
+            SearchOne.isHidden = false
+            SearchTwo.isHidden = false
+            SearchThree.isHidden = false
+            SearchFour.isHidden = false
+            okButton.isHidden = true
+            andLabel.isHidden = true
+            stepLabel.text! = "Select Price Levels by which to Search"
+
+        }
+        if stepValue == 4
+        {
+            eventNameField.isHidden = true
+            cityField.isHidden = true
+            stateField.isHidden = true
+            orLabel.isHidden = true
+            myLocationIconButton.isHidden = true
+            dateLabel.isHidden = true
+            diningLabel.isHidden = true
+            pickerView.isHidden = true
+            datePicker.isHidden = true
+            SearchOne.isHidden = true
+            SearchTwo.isHidden = true
+            SearchThree.isHidden = true
+            SearchFour.isHidden = true
+            okButton.isHidden = false
+            nextStep.isHidden = true
+            andLabel.isHidden = true
+            stepLabel.text! = "Get Ready to Swipe"
+        }
+        stepValue = stepValue + 1
+    }
+    
 
 //IBAction that sets location based on urlHERE, gets the JSONData file, and createsDeck from it 
     
@@ -51,9 +183,32 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboard()
+        self.dismissKeyboard()
+        eventNameField.isHidden = false
+        cityField.isHidden = true
+        stateField.isHidden = true
+        orLabel.isHidden = true
+        myLocationIconButton.isHidden = true
+        dateLabel.isHidden = true
+        diningLabel.isHidden = true
+        pickerView.isHidden = true
+        datePicker.isHidden = true
+        SearchOne.isHidden = true
+        SearchTwo.isHidden = true
+        SearchThree.isHidden = true
+        SearchFour.isHidden = true
+        okButton.isHidden = true
+        andLabel.isHidden = true
+        stepLabel.text! = "Give Your Event a Name"
+        
+//LocationManager Stuff
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.requestAlwaysAuthorization()
+       
+//Picker Views setup
+        
         pickerView.isHidden = true
         datePicker.isHidden = true
         view.addSubview(pickerView)
@@ -61,23 +216,88 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.tap(gestureRecognizer:)))
         let tap2 = UITapGestureRecognizer(target: self
             , action: #selector(self.tap2(gestureRecognizer:)))
-        label.addGestureRecognizer(tap)
+        diningLabel.addGestureRecognizer(tap)
         dateLabel.addGestureRecognizer(tap2)
-        label.isUserInteractionEnabled = true
-        dateLabel.isUserInteractionEnabled = true
-        datePicker.backgroundColor = hexStringToUIColor(hex: "#46B1AA")
-        dateLabel.layer.cornerRadius = 5
-        dateLabel.clipsToBounds = true
-        label.layer.cornerRadius = 5
-        label.clipsToBounds = true
-        okButton.isHidden = true
-        okButton.layer.cornerRadius = 7
-        label.textColor = UIColor.gray
+        
+        //Label and Field Setup
+        
+        diningLabel.textColor = UIColor.gray
         dateLabel.textColor = UIColor.gray
         cityField.textColor = UIColor.black
         stateField.textColor = UIColor.black
         eventNameField.textColor = UIColor.black
+        diningLabel.isUserInteractionEnabled = true
+        dateLabel.isUserInteractionEnabled = true
+        datePicker.backgroundColor = hexStringToUIColor(hex: "#46B1AA")
+        dateLabel.layer.cornerRadius = 5
+        dateLabel.clipsToBounds = true
+        diningLabel.layer.cornerRadius = 5
+        diningLabel.clipsToBounds = true
+        okButton.layer.cornerRadius = 7
+        
+        //Dollar Sign Button Setup
+        
+        SearchOne.layer.cornerRadius = 5
+        SearchOne.clipsToBounds = true
+        SearchOne.backgroundColor = .white
+        SearchTwo.layer.cornerRadius = 5
+        SearchTwo.clipsToBounds = true
+        SearchTwo.backgroundColor = .white
+        SearchThree.layer.cornerRadius = 5
+        SearchThree.clipsToBounds = true
+        SearchThree.backgroundColor = .white
+        SearchFour.layer.cornerRadius = 5
+        SearchFour.clipsToBounds = true
+        SearchFour.backgroundColor = .white
+        
+     
     }
+    
+    @IBAction func amendSearchOne(_ sender: UIButton) {
+        DataManager.sharedData.addRemoveValue(dollarSignValue: 1)
+        if SearchOne.backgroundColor == .gray{
+        SearchOne.backgroundColor = .white
+        }
+        else
+        {
+        SearchOne.backgroundColor = .gray
+        }
+
+    }
+    
+    @IBAction func amendSearchTwo(_ sender: UIButton) {
+       DataManager.sharedData.addRemoveValue(dollarSignValue: 2)
+        if SearchTwo.backgroundColor == .gray{
+            SearchTwo.backgroundColor = .white
+        }
+        else
+        {
+            SearchTwo.backgroundColor = .gray
+        }
+    }
+    
+    @IBAction func amendSearchThree(_ sender: UIButton) {
+        DataManager.sharedData.addRemoveValue(dollarSignValue: 3)
+        if SearchThree.backgroundColor == .gray{
+            SearchThree.backgroundColor = .white
+        }
+        else
+        {
+            SearchThree.backgroundColor = .gray
+        }
+    }
+    
+    @IBAction func amendSearchFour(_ sender: UIButton) {
+        DataManager.sharedData.addRemoveValue(dollarSignValue: 4)
+        if SearchFour.backgroundColor == .gray{
+            SearchFour.backgroundColor = .white
+        }
+        else
+        {
+            SearchFour.backgroundColor = .gray
+        }
+    }
+    
     
     func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
@@ -114,7 +334,6 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
         } else {
             showLocationAlert()
         }
-        areFieldsFilled()
     }
     
 //sets current location to the last known location coordinate stored
@@ -125,7 +344,6 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
             DataManager.sharedData.myCurrentLocation = currentLocation
             flag = false
         }
-        areFieldsFilled()
     }
     
 //shows location request alert. Can customize message here.
@@ -134,7 +352,6 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
         let alert = UIAlertController(title: "Location Disabled", message: "Please enable location services", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
-        areFieldsFilled()
     }
     
 //sets up date selection scroll. Provides format and flexibility in variable storage
@@ -155,13 +372,11 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
     func tap(gestureRecognizer: UITapGestureRecognizer) {
         self.dismissKeyboard()
         self.hideKeyboard()
-        label.textColor = UIColor.black
+        diningLabel.textColor = UIColor.black
         pickerView.isHidden = false
         datePicker.isHidden = true
         cityField.resignFirstResponder()
-        
-        areFieldsFilled()
-    }
+        }
 
 //When the date label is selected, show date scroll and hide type scroll
     
@@ -172,8 +387,6 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
         datePicker.isHidden = false
         pickerView.isHidden = true
         cityField.resignFirstResponder()
-        self.areFieldsFilled()
-        
     }
     
 //Various info to set up pickerView scroll
@@ -186,7 +399,7 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         DataManager.sharedData.venueType = DataManager.sharedData.eventType[row]
-        label.text = DataManager.sharedData.venueType
+        diningLabel.text = DataManager.sharedData.venueType
         DataManager.sharedData.venueType = DataManager.sharedData.venueType.lowercased()
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -199,18 +412,9 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
         pickerView.isHidden = true
         cityField.text! = "Here"
         stateField.text! = "Here"
-        areFieldsFilled()
     }
  
-    
-func areFieldsFilled()
-{
-    if (DataManager.sharedData.eventState.isEmpty && DataManager.sharedData.eventCity.isEmpty && DataManager.sharedData.eventName.isEmpty && DataManager.sharedData.eventDateAndTime.isEmpty && DataManager.sharedData.venueType.isEmpty) == false
-    {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.25){self.okButton.isHidden = false}
-    }
-    
-}
+
     
 //One click of this button takes user input, sets urlHERE, makes deck, and transitions to next ViewController
     @IBAction func getManualURL(_ sender: UIButton) {
