@@ -18,6 +18,14 @@ class SeeGroupVC: UIViewController {
         handleCreateEvent()
     }
     
+    @IBAction func inviteFriends(_ sender: Any) {
+        print("inviting firends")
+        handleInviteFriends()
+    }
+    
+    func handleInviteFriends() {
+        performSegue(withIdentifier: "InviteFriendsIdentifier", sender: self)
+    }
     
     @IBAction func logOut(_ sender: UIButton) {
         handleLogout()

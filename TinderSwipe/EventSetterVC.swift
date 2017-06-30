@@ -281,7 +281,7 @@ func areFieldsFilled()
         var databaseRef: DatabaseReference!
         databaseRef = Database.database().reference() // sets up reference to the Firebase database
         var groupInfo: [String: Any]
-        groupInfo = ["eventName": eventNameField.text]
+        groupInfo = ["eventName": eventNameField.text, "city": cityField.text]
         databaseRef.child("myGroups").childByAutoId().setValue(groupInfo)
     }
 

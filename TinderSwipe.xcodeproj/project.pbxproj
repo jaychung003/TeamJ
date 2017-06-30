@@ -27,6 +27,7 @@
 		CBB4456D1EF2EDB2005F436A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB4456C1EF2EDB2005F436A /* Assets.xcassets */; };
 		CBB445701EF2EDB2005F436A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB4456E1EF2EDB2005F436A /* LaunchScreen.storyboard */; };
 		CBBFF4391EFDC57A005C1EB0 /* EventSetterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFF4381EFDC57A005C1EB0 /* EventSetterVC.swift */; };
+		CBE652E31F06CA5500201E47 /* InviteFriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE652E21F06CA5500201E47 /* InviteFriendsVC.swift */; };
 		CBF330FB1F059FA4003C55D0 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF330F91F059FA4003C55D0 /* LogInVC.swift */; };
 		CBF330FC1F059FA4003C55D0 /* SeeGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF330FA1F059FA4003C55D0 /* SeeGroupVC.swift */; };
 		CBF330FE1F05A07F003C55D0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBF330FD1F05A07F003C55D0 /* GoogleService-Info.plist */; };
@@ -59,6 +60,7 @@
 		CBB4456F1EF2EDB2005F436A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBB445711EF2EDB2005F436A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBBFF4381EFDC57A005C1EB0 /* EventSetterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSetterVC.swift; sourceTree = "<group>"; };
+		CBE652E21F06CA5500201E47 /* InviteFriendsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteFriendsVC.swift; sourceTree = "<group>"; };
 		CBF330F91F059FA4003C55D0 /* LogInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		CBF330FA1F059FA4003C55D0 /* SeeGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeGroupVC.swift; sourceTree = "<group>"; };
 		CBF330FD1F05A07F003C55D0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				CBBFF4381EFDC57A005C1EB0 /* EventSetterVC.swift */,
+				CBE652E21F06CA5500201E47 /* InviteFriendsVC.swift */,
 				CB92D2DC1EF30186007DF6A7 /* SwipeVC.swift */,
 				43B81C691EF36387009972A1 /* ThirdVC.swift */,
 				CBACB7611EFAF32800D2D68B /* resultVC.swift */,
@@ -321,6 +324,7 @@
 				CBB445661EF2EDB2005F436A /* AppDelegate.swift in Sources */,
 				CBF330FC1F059FA4003C55D0 /* SeeGroupVC.swift in Sources */,
 				CBACB7621EFAF32800D2D68B /* resultVC.swift in Sources */,
+				CBE652E31F06CA5500201E47 /* InviteFriendsVC.swift in Sources */,
 				CBF331021F05AB10003C55D0 /* AppUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

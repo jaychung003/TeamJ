@@ -70,6 +70,7 @@ class SwipeVC: UIViewController {
                 let groupInstance = Group()
                 groupInstance.groupName = dictionary["eventName"] as! String
                 print(groupInstance.groupName)
+                print("Datasnapshot:  ", DataSnapshot)
             }
         }
             , withCancel: nil)
