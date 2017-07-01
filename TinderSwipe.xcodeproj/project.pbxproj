@@ -168,7 +168,7 @@
 				TargetAttributes = {
 					CBB445611EF2EDB2005F436A = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = J9ZQ7GC82X;
+						DevelopmentTeam = 883AGS2Z86;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -399,7 +399,7 @@
 			baseConfigurationReference = 663C7909529C4F539D2AE3A5 /* Pods-TinderSwipe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = J9ZQ7GC82X;
+				DEVELOPMENT_TEAM = 883AGS2Z86;
 				INFOPLIST_FILE = TinderSwipe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -414,7 +414,7 @@
 			baseConfigurationReference = 6E18A2FE3AFAB22EA065DC63 /* Pods-TinderSwipe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = J9ZQ7GC82X;
+				DEVELOPMENT_TEAM = 883AGS2Z86;
 				INFOPLIST_FILE = TinderSwipe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
