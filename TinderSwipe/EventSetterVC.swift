@@ -37,16 +37,16 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
 
 //IBAction sets location based on urlHERE, gets the JSONData file, and createsDeck from it
     
-    @IBAction func setLocation(_ sender: UIButton) {
-        let url = DataManager.sharedData.urlHERE
-        DataManager.sharedData.request = NSMutableURLRequest(url: URL(string: url)!)
-        DataManager.sharedData.getJSONData()
-        while DataManager.sharedData.fullJson == nil {
-        }
-        DataManager.sharedData.getResultJson(indexRestaurant: DataManager.sharedData.indexRestaurant)
-        DataManager.sharedData.createDeck()
-    }
-    
+//    @IBAction func setLocation(_ sender: UIButton) {
+//        let url = DataManager.sharedData.urlHERE
+//        DataManager.sharedData.request = NSMutableURLRequest(url: URL(string: url)!)
+//        DataManager.sharedData.getJSONData()
+//        while DataManager.sharedData.fullJson == nil {
+//        }
+//        DataManager.sharedData.getResultJson(indexRestaurant: DataManager.sharedData.indexRestaurant)
+//        DataManager.sharedData.createDeck()
+//    }
+
     
     
 //ViewDidLoad func requests user location privileges, hides scroll pickers, creates a "tap" zone for scrollers
@@ -254,7 +254,7 @@ func areFieldsFilled()
             //This is the transition to the next VC
             
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SwipeVCID")
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "InviteFriendsVCID")
             self.present(nextViewController, animated:true, completion:nil)
             }}
 
@@ -273,16 +273,18 @@ func areFieldsFilled()
             DataManager.sharedData.createDeck()
             
 //This is the transition to the next VC
-
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SwipeVCID")
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "InviteFriendsVCID")
             self.present(nextViewController, animated:true, completion:nil)
+            
+            
         }
-        var databaseRef: DatabaseReference!
-        databaseRef = Database.database().reference() // sets up reference to the Firebase database
-        var groupInfo: [String: Any]
-        groupInfo = ["eventName": eventNameField.text, "city": cityField.text]
-        databaseRef.child("myGroups").childByAutoId().setValue(groupInfo)
+//        uploading eventname and city to database
+//        var databaseRef: DatabaseReference!
+//        databaseRef = Database.database().reference() // sets up reference to the Firebase database
+//        var groupInfo: [String: Any]
+//        groupInfo = ["eventName": eventNameField.text, "city": cityField.text]
+//        databaseRef.child("myGroups").childByAutoId().setValue(groupInfo)
     }
 
 }

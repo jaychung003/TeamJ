@@ -9,6 +9,7 @@
 import UIKit
 
 class Group: NSObject {
+    
     var groupName: String!
     var listOfMembers: [String] = []
     var deck = DataManager.sharedData.deck

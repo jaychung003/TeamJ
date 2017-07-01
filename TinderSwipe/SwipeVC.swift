@@ -16,7 +16,6 @@ class SwipeVC: UIViewController {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var picture: UIImageView!
     
@@ -48,6 +47,7 @@ class SwipeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextPage.isHidden = true
         divisor = (view.frame.width / 2) / 0.61 //degree tilted
         hideButtons()
         //for a few second delay of showing card's info
@@ -57,25 +57,9 @@ class SwipeVC: UIViewController {
         typeLabel.alpha = 0
         ratingLabel.alpha = 0
         addressLabel.alpha = 0
-        cityLabel.alpha = 0
         priceLabel.alpha = 0
         seeMenu.alpha = 0
-        fetchEventName()
     }
-    
-    func fetchEventName() {
-        Database.database().reference().child("myGroups").observe(.childAdded, with: { (DataSnapshot) in
-            
-            if let dictionary = DataSnapshot.value as? [String: AnyObject] {
-                let groupInstance = Group()
-                groupInstance.groupName = dictionary["eventName"] as! String
-                print(groupInstance.groupName)
-                print("Datasnapshot:  ", DataSnapshot)
-            }
-        }
-            , withCancel: nil)
-    }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -93,20 +77,18 @@ class SwipeVC: UIViewController {
     }
     
     //populates the card with info
-    func showInfo()
-    {   print("did deck transfer:", deck)
+    func showInfo() {
+        print("did deck transfer:", deck)
         UIView.animate(withDuration: 0.1, animations: {
         self.nameLabel.text = self.deck[self.cardIndex][0]
         self.typeLabel.text = self.deck[self.cardIndex][1]
         self.ratingLabel.text = self.deck[self.cardIndex][4] + "🔥"
-        self.addressLabel.text = self.deck[self.cardIndex][2]
-        self.cityLabel.text = self.deck[self.cardIndex][3]
+        self.addressLabel.text = self.deck[self.cardIndex][2] + ", " + self.deck[self.cardIndex][3]
         self.priceLabel.text = self.deck[self.cardIndex][5]
         self.nameLabel.alpha = 1
         self.typeLabel.alpha = 1
         self.ratingLabel.alpha = 1
         self.addressLabel.alpha = 1
-        self.cityLabel.alpha = 1
         self.priceLabel.alpha = 1
         self.seeMenu.alpha = 1
 

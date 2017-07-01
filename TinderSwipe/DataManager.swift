@@ -151,6 +151,7 @@ class DataManager: NSObject {
             }
             if JSONLocationType == nil
             {
+                print("is this printing?")
                 JSONLocationType = "N/A"
                 return JSONLocationType
             }
