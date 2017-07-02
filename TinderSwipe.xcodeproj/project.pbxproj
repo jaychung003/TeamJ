@@ -215,7 +215,7 @@
 				TargetAttributes = {
 					CBB445611EF2EDB2005F436A = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = J9ZQ7GC82X;
+						DevelopmentTeam = F7K338KU6F;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -451,13 +451,15 @@
 			baseConfigurationReference = 52C1AF398ABC3D745C946B5A /* Pods-TinderSwipe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = J9ZQ7GC82X;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = F7K338KU6F;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = TinderSwipe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cssummer.TeamJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -467,13 +469,15 @@
 			baseConfigurationReference = B6B4C6C2030AADD2AACB6AA0 /* Pods-TinderSwipe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = J9ZQ7GC82X;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = F7K338KU6F;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = TinderSwipe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cssummer.TeamJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
