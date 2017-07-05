@@ -573,6 +573,9 @@
                             <constraint firstItem="Q4t-Ge-RPD" firstAttribute="leading" secondItem="3uh-0v-P7C" secondAttribute="leading" id="ffD-EG-3jp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resultsTableView" destination="Q4t-Ge-RPD" id="ek9-yk-01l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwq-Fl-dkW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
