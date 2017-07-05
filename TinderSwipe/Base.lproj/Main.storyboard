@@ -236,10 +236,10 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8N-zZ-xnJ">
                                 <rect key="frame" x="0.0" y="545" width="375" height="122"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="3Mp-O4-mel">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="3Mp-O4-mel">
                                         <rect key="frame" x="35" y="60" width="305" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LmH-AH-mtC" customClass="UIButtonX" customModule="TinderSwipe">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LmH-AH-mtC" customClass="UIButtonX" customModule="TinderSwipe">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <color key="backgroundColor" red="0.82802380180000001" green="0.82802380180000001" blue="0.82802380180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -256,7 +256,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lz-G3-Vbr" customClass="UIButtonX" customModule="TinderSwipe">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lz-G3-Vbr" customClass="UIButtonX" customModule="TinderSwipe">
                                                 <rect key="frame" x="85" y="0.0" width="50" height="50"/>
                                                 <color key="backgroundColor" red="0.82802380180000001" green="0.82802380180000001" blue="0.82802380180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -273,7 +273,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46p-iU-ytg" customClass="UIButtonX" customModule="TinderSwipe">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46p-iU-ytg" customClass="UIButtonX" customModule="TinderSwipe">
                                                 <rect key="frame" x="170" y="0.0" width="50" height="50"/>
                                                 <color key="backgroundColor" red="0.82802380180000001" green="0.82802380180000001" blue="0.82802380180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -290,7 +290,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvq-HL-7p9" customClass="UIButtonX" customModule="TinderSwipe">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvq-HL-7p9" customClass="UIButtonX" customModule="TinderSwipe">
                                                 <rect key="frame" x="255" y="0.0" width="50" height="50"/>
                                                 <color key="backgroundColor" red="0.82802380181347157" green="0.82802380181347157" blue="0.82802380181347157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -319,9 +319,8 @@
                                             <constraint firstItem="0lz-G3-Vbr" firstAttribute="leading" secondItem="LmH-AH-mtC" secondAttribute="trailing" constant="35" id="z2D-R1-LwH"/>
                                         </constraints>
                                     </stackView>
-                                    <view clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PSz-Dj-ghT" customClass="UIViewX" customModule="TinderSwipe" customModuleProvider="target">
+                                    <view clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSz-Dj-ghT" customClass="UIViewX" customModule="TinderSwipe" customModuleProvider="target">
                                         <rect key="frame" x="162" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -329,9 +328,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wr-tQ-GNf" userLabel="Menu Button" customClass="UIButtonX" customModule="TinderSwipe">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wr-tQ-GNf" userLabel="Menu Button" customClass="UIButtonX" customModule="TinderSwipe">
                                         <rect key="frame" x="162" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" image="upbutton"/>
                                         <connections>
@@ -341,7 +339,17 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="3Mp-O4-mel" firstAttribute="centerX" secondItem="4Wr-tQ-GNf" secondAttribute="centerX" id="0cq-DJ-E8m"/>
+                                    <constraint firstItem="3Mp-O4-mel" firstAttribute="centerX" secondItem="A8N-zZ-xnJ" secondAttribute="centerX" id="EWB-P4-zEX"/>
+                                    <constraint firstItem="PSz-Dj-ghT" firstAttribute="bottom" secondItem="4Wr-tQ-GNf" secondAttribute="bottom" id="IaT-7C-ceW"/>
+                                    <constraint firstAttribute="bottom" secondItem="3Mp-O4-mel" secondAttribute="bottom" constant="12" id="NPa-bn-evr"/>
+                                    <constraint firstItem="PSz-Dj-ghT" firstAttribute="top" secondItem="A8N-zZ-xnJ" secondAttribute="top" id="NeR-eh-TCx"/>
+                                    <constraint firstItem="3Mp-O4-mel" firstAttribute="centerX" secondItem="PSz-Dj-ghT" secondAttribute="centerX" id="OD5-k7-X1I"/>
+                                    <constraint firstItem="PSz-Dj-ghT" firstAttribute="top" secondItem="4Wr-tQ-GNf" secondAttribute="top" id="UjL-I8-3LQ"/>
                                     <constraint firstAttribute="height" constant="122" id="VCP-jX-1fc"/>
+                                    <constraint firstItem="3Mp-O4-mel" firstAttribute="top" secondItem="4Wr-tQ-GNf" secondAttribute="bottom" constant="10" id="ex7-Uf-jqP"/>
+                                    <constraint firstItem="PSz-Dj-ghT" firstAttribute="leading" secondItem="4Wr-tQ-GNf" secondAttribute="leading" id="hHb-FN-x9T"/>
+                                    <constraint firstItem="PSz-Dj-ghT" firstAttribute="leading" secondItem="A8N-zZ-xnJ" secondAttribute="leading" constant="162" id="i9N-jV-3Xy"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZL-LA-daF" customClass="UIViewX" customModule="TinderSwipe">
