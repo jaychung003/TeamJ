@@ -60,6 +60,8 @@ class DataManager: NSObject {
     var JSONTier: Int!
     var cardTierValue = 0
     var JSONVenueID: String!
+    var JSONPhoneNumber = ""
+    var JSONPhoneNumberString: String!
     
     // variables for data structures, card and deck
     var card = [String]() // an array of strings
@@ -139,6 +141,7 @@ class DataManager: NSObject {
             setImageURL()
             setMenuID()
             setHasMenu()
+            setPhoneNumber()
             deck.append(card)
             count = count + 1
             // reset card and imageURL
@@ -417,6 +420,32 @@ class DataManager: NSObject {
         }
 
     }
+    
+    func getPhoneNumber() -> String
+    { if let JSONVenue = specificRestaurant?["venue"] as? NSDictionary
+    {
+        if let JSONContactInfo = JSONVenue["contact"] as? NSDictionary
+        {
+            let phoneNumber = JSONContactInfo["phone"] as? String
+        
+                if phoneNumber == nil {
+                JSONPhoneNumberString = "NoNumber"
+                }
+                else{
+                JSONPhoneNumberString = String(phoneNumber!)!
+                }
+        
+        }
+        
+        }
+        return(JSONPhoneNumberString)
+    }
+    
+    func setPhoneNumber()
+    {
+        card.append(getPhoneNumber())
+    }
+
     
 }
 

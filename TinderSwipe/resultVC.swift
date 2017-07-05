@@ -37,7 +37,8 @@ class resultVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         }
         else if (longPressGesture.state == UIGestureRecognizerState.began) {
             print("Long press on row, at \(indexPath!.row)")
-            let busPhone = 4157136798
+            var restaurant2 = yesDeck[(indexPath?.row)!]
+            let busPhone = restaurant2[9]
                 if let urlTest = URL(string: "tel://\(busPhone)"), UIApplication.shared.canOpenURL(urlTest) {
                                 UIApplication.shared.open(urlTest)
         }
