@@ -13,6 +13,10 @@ class resultVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var wholeDeck = [[String]]()
     var swipeResult = DataManager.sharedData.swipes
     var yesDeck = DataManager.sharedData.yesDeck
+    var myIndex = 0
+    var venueName = ""
+    var foursquarePageUrl = ""
+    var venueID = ""
     
     override func viewDidLoad() {
         print(swipeResult)
@@ -44,7 +48,19 @@ class resultVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let restImage = UIImage(data: data! as Data)
 
         cell.imageView!.image = restImage
+
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myIndex = indexPath.row
+        venueName = DataManager.sharedData.JSONname
+        venueID = DataManager.sharedData.JSONMenuID
+        venueName = venueName.replacingOccurrences(of: " ", with: "-", options: .literal, range: nil)
+        venueName = venueName.lowercased()
+        foursquarePageUrl = "https://foursquare.com/v/" + venueName + "/" + venueID
+        print(foursquarePageUrl)
+        UIApplication.shared.openURL(URL(string: foursquarePageUrl)!)
     }
 }

@@ -59,6 +59,7 @@ class DataManager: NSObject {
     var JSONMenuURL = ""
     var JSONTier: Int!
     var cardTierValue = 0
+    var JSONVenueID: String!
     
     // variables for data structures, card and deck
     var card = [String]() // an array of strings
@@ -128,6 +129,7 @@ class DataManager: NSObject {
             print("CardTierValue",cardTierValue)
             if priceArray.contains(cardTierValue)
             {
+            getJSONVenueID()
             setName()
             setLocationType()
             setLocationAddress()
@@ -214,6 +216,13 @@ class DataManager: NSObject {
         card.append(getName())
     }
     
+    func getJSONVenueID() -> String
+    {
+        getMenuID()
+        print("Try this as the id:", JSONMenuID)
+        return ""
+    }
+    
     func getLocationAddress() -> String
     {
         if let JSONVenue = specificRestaurant?["venue"] as? NSDictionary
@@ -230,6 +239,7 @@ class DataManager: NSObject {
         }
         return JSONLocationAddress
     }
+    
     
     func setLocationAddress()
     {
