@@ -96,8 +96,13 @@ class SwipeVC: UIViewController {
         self.seeMenu.alpha = 1
 
         //picture
-        let url = NSURL(string:self.deck[self.cardIndex][6])
-        let data = NSData(contentsOf:url! as URL)
+        var url = NSURL(string:self.deck[self.cardIndex][6])
+        var data = NSData(contentsOf:url! as URL)
+        if data == nil
+        {
+            url = NSURL(string:"https://igx.4sqi.net/img/general/480x400/2917082_n4tODq6E-UAwyBnTaECi1E-UexQhjEgl_vOYDU1CriM.jpg")
+            data = NSData(contentsOf:url! as URL)
+            }
         self.picture.image = UIImage(data: data! as Data)
         self.picture.alpha = 1
     })

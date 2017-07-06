@@ -139,7 +139,7 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
             SearchFour.isHidden = false
             okButton.isHidden = true
             andLabel.isHidden = true
-            stepLabel.text! = "Select Price Levels by which to Search"
+            stepLabel.text! = "Select Up To Four Price Ranges"
 
         }
         if stepValue == 4
@@ -200,6 +200,7 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
         okButton.isHidden = true
         andLabel.isHidden = true
         stepLabel.text! = "Give Your Event a Name"
+        
         
 //LocationManager Stuff
         
