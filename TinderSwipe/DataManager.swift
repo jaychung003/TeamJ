@@ -62,6 +62,8 @@ class DataManager: NSObject {
     var JSONVenueID: String!
     var JSONPhoneNumber = ""
     var JSONPhoneNumberString: String!
+    var arraySize = 0
+    var sizeCount = 0
     
     // variables for data structures, card and deck
     var card = [String]() // an array of strings
@@ -104,7 +106,7 @@ class DataManager: NSObject {
     }
     
     // gets the top level of the JSON file that is the same for all of the restaurants (before specific). Leaves us with a Specific5 value
-    func getResultJson(indexRestaurant: Int)
+    func getResultJson(indexRestaurant: Int) -> NSDictionary
     {
         if let JSONResponse = fullJson?["response"] as? NSDictionary
         {
@@ -113,22 +115,34 @@ class DataManager: NSObject {
                 if let JSONResult = JSONGroup["results"] as? NSArray
                 {
                     specificRestaurant = JSONResult[indexRestaurant] as? NSDictionary
-                    //print(specificRestaurant as Any)
-                    
+                    arraySize = JSONResult.count                    
                 }
             }
         }
+     return specificRestaurant!
     }
+    
+    func findSize()
+    {   while indexRestaurant < (arraySize - 1)
+        {   getResultJson(indexRestaurant: indexRestaurant)
+            getPrice()
+            if priceArray.contains(cardTierValue)
+            {sizeCount = sizeCount + 1 }
+            indexRestaurant = indexRestaurant + 1
+        }
+        print("SIZE COUNT: ", sizeCount)
+        indexRestaurant = 0
+    }
+    
     
     //creates Deck
     func createDeck() -> [[String]]
-    {
+    {   findSize()
         var count = 0
-        while count < 15
+        while count < sizeCount
         {
             getResultJson(indexRestaurant: indexRestaurant)
             getPrice()
-            print("CardTierValue",cardTierValue)
             if priceArray.contains(cardTierValue)
             {
             getJSONVenueID()
