@@ -194,6 +194,16 @@
                                     <action selector="incrementStepValue:" destination="e0O-QO-PQr" eventType="touchUpInside" id="WZB-8b-Nvg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEU-6p-5vh">
+                                <rect key="frame" x="307" y="28" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="BACK">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backAction:" destination="e0O-QO-PQr" eventType="touchUpInside" id="lU1-L7-JMF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12549019607843137" green="0.63921568627450975" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.47843137254901957" green="0.36470588235294116" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -204,6 +214,7 @@
                         <outlet property="SearchThree" destination="q3N-SH-n8e" id="VxR-D1-3Z0"/>
                         <outlet property="SearchTwo" destination="g0T-te-eoO" id="s65-cD-mnJ"/>
                         <outlet property="andLabel" destination="2YI-CQ-fKA" id="eUf-a6-aUn"/>
+                        <outlet property="backButton" destination="pEU-6p-5vh" id="G9L-pQ-QTi"/>
                         <outlet property="cityField" destination="BXH-Dv-leE" id="B1A-hS-YLk"/>
                         <outlet property="dateLabel" destination="fyV-L8-94l" id="S1N-E6-hFV"/>
                         <outlet property="datePicker" destination="OVC-LC-Wzs" id="YNl-1l-Axx"/>

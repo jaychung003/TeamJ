@@ -26,6 +26,7 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
     @IBOutlet weak var myLocationIconButton: UIButton!
     @IBOutlet weak var stepLabel: UILabel!
     @IBOutlet weak var andLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     
    
 // IBOutlets to collect price range data
@@ -51,8 +52,145 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
     var action = UIAlertAction()
     var alertView = UIAlertController()
     
-//IBAction to increment stepValue
 
+    @IBAction func backAction(_ sender: Any) {
+        stepValue = stepValue - 1
+        
+        if stepValue == 0
+        {   self.dismissKeyboard()
+            eventNameField.isHidden = false
+            cityField.isHidden = true
+            stateField.isHidden = true
+            orLabel.isHidden = true
+            myLocationIconButton.isHidden = true
+            dateLabel.isHidden = true
+            diningLabel.isHidden = true
+            pickerView.isHidden = true
+            datePicker.isHidden = true
+            SearchOne.isHidden = true
+            SearchTwo.isHidden = true
+            SearchThree.isHidden = true
+            SearchFour.isHidden = true
+            okButton.isHidden = true
+            andLabel.isHidden = true
+            stepLabel.text! = "Give Your Event a Name"
+            backButton.isHidden = true
+            backButton.isUserInteractionEnabled = false
+            stepValue = stepValue - 1
+            print("step value: ", stepValue)
+        
+        }
+        
+        if stepValue == 1
+        {
+            eventNameField.isHidden = true
+            cityField.isHidden = false
+            stateField.isHidden = false
+            orLabel.isHidden = false
+            myLocationIconButton.isHidden = false
+            dateLabel.isHidden = true
+            diningLabel.isHidden = true
+            pickerView.isHidden = true
+            datePicker.isHidden = true
+            SearchOne.isHidden = true
+            SearchTwo.isHidden = true
+            SearchThree.isHidden = true
+            SearchFour.isHidden = true
+            okButton.isHidden = true
+            andLabel.isHidden = false
+            stepLabel.text! = "Search by City and State or Current Location"
+            backButton.isHidden = false
+            backButton.isUserInteractionEnabled = true
+            stepValue = stepValue - 1
+            print("step value: ", stepValue)
+        }
+        if stepValue == 2
+        {
+            self.hideKeyboard()
+            self.dismissKeyboard()
+            eventNameField.isHidden = true
+            cityField.isHidden = true
+            stateField.isHidden = true
+            orLabel.isHidden = true
+            myLocationIconButton.isHidden = true
+            dateLabel.isHidden = false
+            diningLabel.isHidden = true
+            pickerView.isHidden = true
+            datePicker.isHidden = false
+            SearchOne.isHidden = true
+            SearchTwo.isHidden = true
+            SearchThree.isHidden = true
+            SearchFour.isHidden = true
+            okButton.isHidden = true
+            andLabel.isHidden = true
+            stepLabel.text! = "Select a Time and Date for Your Event"
+            backButton.isHidden = false
+            backButton.isUserInteractionEnabled = true
+            stepValue = stepValue - 1
+            print("step value: ", stepValue)
+
+            
+        }
+        if stepValue == 3
+        {
+            self.hideKeyboard()
+            self.dismissKeyboard()
+            eventNameField.isHidden = true
+            cityField.isHidden = true
+            stateField.isHidden = true
+            orLabel.isHidden = true
+            myLocationIconButton.isHidden = true
+            dateLabel.isHidden = true
+            diningLabel.isHidden = false
+            pickerView.isHidden = false
+            datePicker.isHidden = true
+            SearchOne.isHidden = true
+            SearchTwo.isHidden = true
+            SearchThree.isHidden = true
+            SearchFour.isHidden = true
+            okButton.isHidden = true
+            andLabel.isHidden = true
+            stepLabel.text! = "Select a Type of Dining for Your Event"
+            backButton.isHidden = false
+            backButton.isUserInteractionEnabled = true
+            stepValue = stepValue - 1
+            print("step value: ", stepValue)
+
+            
+        }
+        if stepValue == 4
+        {
+            self.hideKeyboard()
+            self.dismissKeyboard()
+            eventNameField.isHidden = true
+            cityField.isHidden = true
+            stateField.isHidden = true
+            orLabel.isHidden = true
+            myLocationIconButton.isHidden = true
+            dateLabel.isHidden = true
+            diningLabel.isHidden = true
+            pickerView.isHidden = true
+            datePicker.isHidden = true
+            SearchOne.isHidden = false
+            SearchTwo.isHidden = false
+            SearchThree.isHidden = false
+            SearchFour.isHidden = false
+            okButton.isHidden = true
+            andLabel.isHidden = true
+            backButton.isHidden = false
+            backButton.isUserInteractionEnabled = true
+            stepLabel.text! = "Select Up To Four Price Ranges"
+            stepValue = stepValue - 1 
+            print("step value: ", stepValue)
+        }
+    stepValue = stepValue + 1
+
+        
+    }
+    
+    
+//IBAction to increment stepValue
+    
     @IBAction func incrementStepValue(_ sender: UIButton) {
         self.hideKeyboard()
         self.dismissKeyboard()
@@ -74,6 +212,11 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
             okButton.isHidden = true
             andLabel.isHidden = false
             stepLabel.text! = "Search by City and State or Current Location"
+            backButton.isHidden = false
+            backButton.isUserInteractionEnabled = true
+            backButton.isHidden = false
+            backButton.isUserInteractionEnabled = true
+            print("step value: ", stepValue)
 
         }
         if stepValue == 1
@@ -95,8 +238,10 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
             SearchFour.isHidden = true
             okButton.isHidden = true
             andLabel.isHidden = true
+            backButton.isHidden = false
+            backButton.isUserInteractionEnabled = true
             stepLabel.text! = "Select a Time and Date for Your Event"
-
+            print("step value: ", stepValue)
         }
         if stepValue == 2
         {
@@ -117,8 +262,10 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
             SearchFour.isHidden = true
             okButton.isHidden = true
             andLabel.isHidden = true
+            backButton.isHidden = false
+            backButton.isUserInteractionEnabled = true
             stepLabel.text! = "Select a Type of Dining for Your Event"
-
+            print("step value: ", stepValue)
         }
         if stepValue == 3
         {
@@ -139,8 +286,10 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
             SearchFour.isHidden = false
             okButton.isHidden = true
             andLabel.isHidden = true
+            backButton.isHidden = false
+            backButton.isUserInteractionEnabled = true
             stepLabel.text! = "Select Up To Four Price Ranges"
-
+            print("step value: ", stepValue)
         }
         if stepValue == 4
         {
@@ -160,7 +309,10 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
             okButton.isHidden = false
             nextStep.isHidden = true
             andLabel.isHidden = true
+            backButton.isHidden = false
+            backButton.isUserInteractionEnabled = true
             stepLabel.text! = "Get Ready to Swipe"
+            print("step value: ", stepValue)
         }
         stepValue = stepValue + 1
     }
@@ -200,7 +352,9 @@ class EventSetterVC: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
         okButton.isHidden = true
         andLabel.isHidden = true
         stepLabel.text! = "Give Your Event a Name"
-        
+        backButton.isHidden = true
+        backButton.isUserInteractionEnabled = false
+        print("step value: ", stepValue)
         
 //LocationManager Stuff
         
